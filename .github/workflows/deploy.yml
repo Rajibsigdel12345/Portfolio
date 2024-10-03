@@ -2,7 +2,7 @@ name: Build and Deploy
 env:
   CI: false
   GITHUB_USERNAME: ${{ github.repository_owner }}
-  REACT_APP_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is automatically set by Github Actions
+  REACT_APP_GITHUB_TOKEN: ${{ secrets.TOKEN }} # This is automatically set by Github Actions
   USE_GITHUB_DATA: "true"
   MEDIUM_USERNAME: "rajibsigdel12345" # Change this to your medium username
 on:
@@ -37,6 +37,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} # Use 'token' instead of 'GITHUB_TOKEN'
+          token: ${{ secrets.TOKEN }} # Use 'token' instead of 'GITHUB_TOKEN'
           BRANCH: gh-pages
           FOLDER: build # Ensure the folder is correctly named
