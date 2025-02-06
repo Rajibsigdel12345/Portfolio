@@ -11,7 +11,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 12 * * 1"  # see https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events
+    - cron: "0 12 * * 1" # see https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
           npm run build
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.2.0 # Use a different version of the action
         with:
           token: ${{ secrets.TOKEN }} # Use 'token' instead of 'GITHUB_TOKEN'
           BRANCH: gh-pages
